@@ -1,5 +1,4 @@
 :root {
-  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -7,9 +6,14 @@
   -webkit-text-size-adjust: 100%;
 }
 @font-face {
-  font-family: Cantrell;
+  font-family: Cantrell-Regular;
   src: url(../Assets/cantarell/Cantarell-Regular.ttf);
 }
+@font-face {
+  font-family: Cantrell-Bold;
+  src: url(../Assets/cantarell/Cantarell-Bold.ttf);
+}
 body {
-  font-family: Cantrell, sans-serif;
+  font-family: Cantrell-Regular, sans-serif;
+  font-size: 18px;
 }

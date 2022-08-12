@@ -1,15 +1,14 @@
 import { useState } from "react";
+import MoneyToBeEarned from "../Components/MoneyToBeEarned/MoneyToBeEarned";
+import Question from "../Components/Question/Question";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <p>heyy</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, ullam!
-      </p>
-    </div>
+    <>
+      <Question />
+      <MoneyToBeEarned />
+    </>
   );
 }
 
