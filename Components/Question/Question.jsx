@@ -8,16 +8,24 @@ function Question({
   setQuestionNumber,
   setGamestop,
   setQuestionIndex,
+  questionIndex,
 }) {
-  let [optionClicked, setOptionClicked] = useState(null);
-  let [timeOut, setTimeOut] = useState(30);
-  let [classAdded, setClassAdded] = useState(null);
+  const [optionClicked, setOptionClicked] = useState(null);
+  const [timeOut, setTimeOut] = useState(30);
+  const [classAdded, setClassAdded] = useState(null);
+  const [lose] = useState(new Audio("../../Assets/Lose.mp3"));
+  const [win] = useState(new Audio("../../Assets/Win.mp3"));
 
   useEffect(() => {
-    if (timeOut === 0) return time(() => setGamestop(true), 6000);
-    const interval = setInterval(() => {
-      // setTimeOut((prev) => prev - 1);
-    }, 1000);
+    let interval;
+    if (timeOut === 0) {
+      return time(() => setGamestop((prev) => !prev), 6000);
+    } else {
+      interval = setInterval(() => {
+        setTimeOut((prev) => prev - 1);
+      }, 1000);
+    }
+
     return () => {
       clearInterval(interval);
     };
@@ -31,7 +39,7 @@ function Question({
   }
 
   // Answer evaluation function
-  function optionEval(i) {
+  function optionEval(i, e) {
     setOptionClicked(i);
     setClassAdded("option active");
     time(
@@ -39,10 +47,13 @@ function Question({
       3000
     );
     if (i.correct) {
+      if (questionIndex === 15) return setGamestop((prev) => !prev);
       time(() => setQuestionNumber((q) => q + 1), 6000);
       time(() => setQuestionIndex((q) => q + 1), 6000);
       time(() => setTimeOut(30), 6000);
+      time(() => win.play(), 5000);
     } else {
+      time(() => lose.play(), 5000);
       time(() => setGamestop(true), 6000);
     }
   }
@@ -60,12 +71,14 @@ function Question({
               <div
                 key={i}
                 className={optionClicked === element ? classAdded : "option"}
-                onClick={() => optionEval(element)}
+                onClick={() => optionEval(element, question.answers)}
               >
                 <p>
                   <span> {letters[i]}</span>
                   {" : "}
-                  {element.text}
+                  <span
+                    dangerouslySetInnerHTML={{ __html: element.text }}
+                  ></span>
                 </p>
               </div>
             );

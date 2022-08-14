@@ -33,7 +33,7 @@
 .option:hover {
   background: var(--blue-200);
 }
-.option span {
+.option span:first-of-type {
   color: var(--gold-100);
 }
 .option::before {
