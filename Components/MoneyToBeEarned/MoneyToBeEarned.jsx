@@ -1,8 +1,20 @@
-import React from "react";
-import MoneyPyramid from "../MoneyPyramid.js";
+import { useEffect } from "react";
+
 import "./moneytobeEarned.css";
 
-function MoneyToBeEarned({ question }) {
+function MoneyToBeEarned({
+  question,
+  MoneyPyramid,
+  gamestop,
+  setMoneyEarned,
+  moneyEarned,
+}) {
+  useEffect(() => {
+    question > 1
+      ? setMoneyEarned(MoneyPyramid.find((money) => money.id === question - 1).amount)
+      : moneyEarned;
+      // console.log(MoneyPyramid.amount)
+  }, [question]);
   return (
     <aside>
       {MoneyPyramid.map((money) => {

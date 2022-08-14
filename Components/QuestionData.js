@@ -1266,10 +1266,6 @@ const data = [
       "Which classical composer wrote the &quot;Moonlight Sonata&quot;?",
     answers: [
       {
-        text: "Ludvig Van Beethoven",
-        correct: true,
-      },
-      {
         text: "Wolfgang Amadeus Mozart",
         correct: false,
       },
@@ -1281,6 +1277,10 @@ const data = [
         text: "Johannes Brahms",
         correct: false,
       },
+      {
+        text: "Ludvig Van Beethoven",
+        correct: true,
+      },
     ],
   },
   {
@@ -1289,13 +1289,14 @@ const data = [
       "Former United States President Bill Clinton famously played which instrument?",
     answers: [
       {
-        text: "Saxophone",
-        correct: true,
-      },
-      {
         text: "Baritone horn",
         correct: false,
       },
+      {
+        text: "Saxophone",
+        correct: true,
+      },
+
       {
         text: "Piano",
         correct: false,
@@ -1311,16 +1312,16 @@ const data = [
     question: "What mythology did the god &quot;Apollo&quot; come from?",
     answers: [
       {
-        text: "Greek and Roman",
-        correct: true,
-      },
-      {
         text: "Roman and Spanish",
         correct: false,
       },
       {
         text: "Greek and Chinese",
         correct: false,
+      },
+      {
+        text: "Greek and Roman",
+        correct: true,
       },
       {
         text: "Greek, Roman and Norse",
@@ -1513,12 +1514,12 @@ const data = [
     question: "Who won the 2017 Formula One World Drivers&#039; Championship?",
     answers: [
       {
-        text: "Lewis Hamilton",
-        correct: true,
-      },
-      {
         text: "Max Verstappen",
         correct: false,
+      },
+      {
+        text: "Lewis Hamilton",
+        correct: true,
       },
       {
         text: "Max Verstappen",
@@ -1558,10 +1559,6 @@ const data = [
     question: "In &quot;Homestuck&quot; what is Dave Strider&#039;s guardian?",
     answers: [
       {
-        text: "Bro",
-        correct: true,
-      },
-      {
         text: "Becquerel",
         correct: false,
       },
@@ -1572,6 +1569,10 @@ const data = [
       {
         text: "Halley",
         correct: false,
+      },
+      {
+        text: "Bro",
+        correct: true,
       },
     ],
   },
