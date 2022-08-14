@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Cantrell-Regular;
+  src: url(../Assets/cantarell/Cantarell-Regular.ttf);
+}
+@font-face {
+  font-family: Cantrell-Bold;
+  src: url(../../Assets/cantarell/Cantarell-Bold.ttf);
+}
+aside {
+  width: 20%;
+ min-width: 314px;
+  color: white;
+  background: linear-gradient(
+    93deg,
+    hsl(241, 98%, 22%) 10%,
+    hsl(241, 50%, 66%)
+  );
+  border-left: 4px solid gray;
+  display: grid;
+  place-content: center;
+  font-family: Cantrell-Bold, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  gap: 3px;
+}
+.eachQuestion {
+  display: flex;
+  gap: 15px;
+  text-align: left;
+  padding: 5px 15px;
+  color: hsl(41, 100%, 50%);
+}
+.moneyId {
+  width: 30px;
+  text-align: right;
+}
+.eachQuestion.active {
+  background: linear-gradient(
+    to right,
+    hsl(41, 100%, 46%),
+    hsl(41, 100%, 60%),
+    hsl(41, 100%, 50%)
+  );
+  border-radius: 12px;
+  color: black;
+}
