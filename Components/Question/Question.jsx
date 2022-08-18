@@ -16,10 +16,18 @@ function Question({
   const [lose] = useState(new Audio("../../Assets/Lose.mp3"));
   const [win] = useState(new Audio("../../Assets/Win.mp3"));
 
+  // SetTimeout function for recurring usages
+  function time(event, speed) {
+    setTimeout(() => {
+      event();
+    }, speed);
+  }
+
   useEffect(() => {
     let interval;
     if (timeOut === 0) {
-      return time(() => setGamestop((prev) => !prev), 6000);
+      time(() => setGamestop((prev) => !prev), 1000);
+      return time(() => lose.play(), 10);
     } else {
       interval = setInterval(() => {
         setTimeOut((prev) => prev - 1);
@@ -30,13 +38,6 @@ function Question({
       clearInterval(interval);
     };
   });
-
-  // SetTimeout function for recurring usages
-  function time(event, speed) {
-    setTimeout(() => {
-      event();
-    }, speed);
-  }
 
   // Answer evaluation function
   function optionEval(i, e) {

@@ -8,7 +8,7 @@ import Default from "../Components/DefaultState/DefaultState";
 function App() {
   const rand = Math.ceil(Math.random() * 52);
   const [inputedName, setInputedName] = useState("");
-  const [questionNumber, setQuestionNumber] = useState(1);
+  const [questionNumber, setQuestionNumber] = useState(rand);
   const [questionIndex, setQuestionIndex] = useState(1);
   const [gamestop, setGamestop] = useState(false);
   const [moneyEarned, setMoneyEarned] = useState("₦ 0");
