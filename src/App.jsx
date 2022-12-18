@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import MoneyToBeEarned from "../Components/MoneyToBeEarned/MoneyToBeEarned";
 import MoneyPyramid from "../Components/MoneyPyramid";
 import Question from "../Components/Question/Question";
@@ -7,19 +7,17 @@ import Default from "../Components/DefaultState/DefaultState";
 
 function App() {
   const rand = Math.ceil(Math.random() * 52);
-  const [inputedName, setInputedName] = useState("");
-  const [questionNumber, setQuestionNumber] = useState(rand);
-  const [questionIndex, setQuestionIndex] = useState(1);
-  const [gamestop, setGamestop] = useState(false);
-  const [moneyEarned, setMoneyEarned] = useState("₦ 0");
+  const [inputedName, setInputedName] = React.useState("");
+  const [questionNumber, setQuestionNumber] = React.useState(rand);
+  const [questionIndex, setQuestionIndex] = React.useState(1);
+  const [gamestop, setGamestop] = React.useState(false);
+  const [moneyEarned, setMoneyEarned] = React.useState("₦ 0");
 
-  return gamestop ? (
-    <Default
-      moneyEarned={moneyEarned}
-      inputedName={inputedName}
-      setInputedName={setInputedName}
-    />
-  ) : (
+  if (gamestop) {
+    return <Default moneyEarned={moneyEarned} />;
+  }
+
+  return (
     <main>
       <Question
         question={data[questionNumber]}

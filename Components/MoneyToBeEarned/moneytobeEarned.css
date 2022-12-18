@@ -8,7 +8,7 @@
 }
 aside {
   width: 20%;
- min-width: 314px;
+  min-width: 314px;
   color: white;
   background: linear-gradient(
     93deg,
@@ -43,4 +43,9 @@ aside {
   );
   border-radius: 12px;
   color: black;
+}
+@media (max-width: 850px) {
+  aside {
+    display: none;
+  }
 }

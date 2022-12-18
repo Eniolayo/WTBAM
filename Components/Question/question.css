@@ -3,7 +3,7 @@
   --blue-100: linear-gradient(hsl(250, 94%, 28%), hsl(250, 100%, 12%));
   --blue-200: hsl(250, 100%, 12%);
   --blue-300: hsl(250, 94%, 28%);
-  --gold-100:hsl(41, 100%, 50%);
+  --gold-100: hsl(41, 100%, 50%);
 }
 .question--section {
   width: min(90%, 1000px);
@@ -72,7 +72,7 @@
 .option.active {
   background: var(--gold-100);
 }
-.option.active span{
+.option.active span {
   color: #fff;
 }
 @keyframes correct {
@@ -128,5 +128,10 @@
   }
   100% {
     background: green;
+  }
+}
+@media (max-width: 850px) {
+  .container {
+    width: 100%;
   }
 }

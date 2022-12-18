@@ -1,10 +1,15 @@
-import "./defaultState.css"
+import "./defaultState.css";
 
-function DefaultState({ moneyEarned, inputedName, setInputedName }) {
+function DefaultState({ moneyEarned }) {
+  function reload() {
+    window.location.reload();
+  }
   return (
     <main className="default--background">
       <h1>You Earned {moneyEarned}</h1>
-      {/* {inputedName ? <h1>You Earned {moneyEarned}</h1> : <p>fff</p>} */}
+      <button className="replay--button" type="button" onClick={() => reload()}>
+        Replay
+      </button>
     </main>
   );
 }
